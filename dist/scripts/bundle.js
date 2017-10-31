@@ -19936,6 +19936,30 @@ module.exports = About;
 
 var React = require('react');
 
+var Header = React.createClass({displayName: "Header",
+	render: function() {
+		return (
+        React.createElement("nav", {className: "navbar navbar-default"}, 
+          React.createElement("div", {className: "container-fluid"}, 
+              React.createElement("a", {href: "/", className: "navbar-brand"}, 
+                React.createElement("img", {src: "images/pluralsight-logo.png"})
+              ), 
+              React.createElement("ul", {className: "nav navbar-nav"}, 
+                React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
+                React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+              )
+          )
+        )
+		);
+	}
+});
+
+module.exports = Header;
+},{"react":156}],159:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
 var Home = React.createClass({displayName: "Home",
     render: function () {
         return (
@@ -19949,14 +19973,15 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":156}],159:[function(require,module,exports){
+},{"react":156}],160:[function(require,module,exports){
 var React = require('react');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
+var Header = require('./components/common/header');
 
 
 (function (window) {
-
+"use strict";
 var App = React.createClass({displayName: "App",
     render: function () {
         var Child;
@@ -19966,8 +19991,9 @@ var App = React.createClass({displayName: "App",
             default: Child = Home;
         }
 
-        return(
+        return (
             React.createElement("div", null, 
+                React.createElement(Header, null), 
                 React.createElement(Child, null)
             )
         );
@@ -19982,6 +20008,5 @@ function render() {
 window.addEventListener('hashchange', render);
 render();
 
-React.render(React.createElement(Home, null), document.getElementById('app'));
-})(window)
-},{"./components/about/aboutPage":157,"./components/homePage":158,"react":156}]},{},[159]);
+})(window);
+},{"./components/about/aboutPage":157,"./components/common/header":158,"./components/homePage":159,"react":156}]},{},[160]);
