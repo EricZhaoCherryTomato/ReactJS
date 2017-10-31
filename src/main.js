@@ -1,3 +1,4 @@
-var App = console.log('Hello Eric');
+var React = require('react');
+var Home = require('./components/homePage');
 
-module.exports = App;
+React.render(<Home />, document.getElementById('app'));
