@@ -18,7 +18,8 @@ var config = {
         js: './src/**/*.js',
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.css',
-            'node_modules/bootstrap/dist/css/bootstrap-theme.css'
+            'node_modules/bootstrap/dist/css/bootstrap-theme.css',
+            'node_modules/toastr/build/toastr.min.css'
         ],
         dist: './dist',
         mainJs: './src/main.js',
